@@ -1,10 +1,12 @@
+package com.zipcodewilmington.centralibrary;
+
 public abstract class Person {
 
     private String name;
     private int age;
     private String email;
     private String phoneNumber;
-}
+
 
 // constructor- lets you create a person with values
 // "this." take the value that was passed in and store it in this object's name field
@@ -52,3 +54,5 @@ public void setAge(int age) {
 public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     }
+
+}

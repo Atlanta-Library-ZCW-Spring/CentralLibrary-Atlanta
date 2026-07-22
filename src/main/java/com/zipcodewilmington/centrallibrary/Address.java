@@ -1,10 +1,12 @@
+package com.zipcodewilmington.centralibrary;
+
 public class Address {
 
 private String street;
 private String city;
 private String state;
 private String zipCode;
-}
+
 
 // constructor
 
@@ -31,4 +33,21 @@ public String getState () {
 
 public String getZipCode () {
     return zipCode;
+}
+//Setter
+    public void setStreet (String street){
+        this.street = street;
+    }
+    public void setCity (String city){
+        this.city = city;
+    }
+    public void setState (String state){
+        this.state = state;
+    }
+    public void setZipCode (String zipCode){
+        this.zipCode = zipCode;
+    }
+
+
+
 }

@@ -1,10 +1,12 @@
+package com.zipcodewilmington.centralibrary;
+
 // extends means the librarian has everything from "person" file
 
     public class Librarian extends Person {
     private String employeeId;
     private String department;
     private double salary;
-    }
+    
   // Super is calling what we did in "person" file
 // super(name,age,email,phoneNumber)
 
@@ -56,6 +58,8 @@ public void addItemToLibrary (){
     // TODO: implement when library class is complete
 }
 
-public void removeItemToLibrary () {
+public void removeItemFromLibrary () {
     // TODO: implement when library class is complete
 }
+
+    }
