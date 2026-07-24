@@ -3,7 +3,7 @@ package com.zipcodewilmington.centrallibrary;
 public class Music extends LibraryItem {
 
     private String artist;
-    private String album;
+    private String track;
     private String genre;
     private int duration;
 
@@ -12,14 +12,14 @@ public class Music extends LibraryItem {
             String title,
             String location,
             String artist,
-            String album,
+            String track,
             String genre,
             int duration) {
 
         super(id, title, location);
 
         this.artist = artist;
-        this.album = album;
+        this.track = track;
         this.genre = genre;
         this.duration = duration;
     }
@@ -28,8 +28,8 @@ public class Music extends LibraryItem {
         return artist;
     }
 
-    public String getAlbum() {
-        return album;
+    public String gettrack() {
+        return track;
     }
 
     public String getGenre() {
@@ -57,6 +57,6 @@ public class Music extends LibraryItem {
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), artist, album, genre);
+        return java.util.List.of(getTitle(), artist, track, genre);
     }
 }
