@@ -2,24 +2,41 @@ package com.zipcodewilmington.centrallibrary;
 
 public class Periodical extends LibraryItem {
 
-    private String issueNumber;
-    private String publicationDate;
     private String publisher;
     private String issn;
     private int volume;
+    private String issueNumber;
+    private String publicationDate;
+
     public Periodical(
             String id,
             String title,
             String location,
+            String publisher,
+            String issn,
+            int volume,
             String issueNumber,
-            String publicationDate,
-            String publisher) {
+            String publicationDate) {
 
         super(id, title, location);
 
+        this.publisher = publisher;
+        this.issn = issn;
+        this.volume = volume;
         this.issueNumber = issueNumber;
         this.publicationDate = publicationDate;
-        this.publisher = publisher;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getIssn() {
+        return issn;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 
     public String getIssueNumber() {
@@ -28,10 +45,6 @@ public class Periodical extends LibraryItem {
 
     public String getPublicationDate() {
         return publicationDate;
-    }
-
-    public String getPublisher() {
-        return publisher;
     }
 
     @Override
@@ -51,6 +64,7 @@ public class Periodical extends LibraryItem {
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), issueNumber, publisher);
+        return java.util.List.of(getTitle(), publisher, issn);
     }
 }
+
