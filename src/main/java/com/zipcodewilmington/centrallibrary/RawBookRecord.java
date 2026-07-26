@@ -1,4 +1,4 @@
-package com.zipcodewilmington.POJO;
+package com.zipcodewilmington.centrallibrary;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

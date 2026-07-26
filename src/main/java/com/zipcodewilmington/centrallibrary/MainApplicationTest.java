@@ -3,7 +3,7 @@ package com.zipcodewilmington.centrallibrary;
 /**
  * Created by n3pjk on 6/9/2025.
  */
-public class MainApplication {
+public class MainApplicationTest {
     public static void main(String [] args){
 
 //Addresses
@@ -15,11 +15,6 @@ Address address4 = new Address ("600 Washington St","Wilmington","DE","19810");
 Address address5 = new Address ("123 Candyland Ave", "Chester", "PA","19010");
 Address address6 = new Address ("111 MLK Blvd", "Wilmington", "DE", "19805") ;
 Address address7 = new Address ("800 Marshall St", "Middletown", "DE", "19702");
-
-
-//Library 
-Library centralLibraryAtlanta = new Library("Central Library Atlanta", address1);
-
 
 //Librarian
 
@@ -41,8 +36,7 @@ Librarian krisYounger = new Librarian (
     "123-4567",
     "L002",
     "Management Assistant",
-    40000,
-    centralLibraryAtlanta
+    40000
 );
 
 //Members
@@ -53,8 +47,7 @@ LibraryMember alice = new LibraryMember(
     "555-1234",
     "M001",
     "07/24/2026",
-    address2,
-    centralLibraryAtlanta
+    address2
 );
 
 LibraryMember bob = new LibraryMember(
@@ -64,8 +57,7 @@ LibraryMember bob = new LibraryMember(
     "555-4321",
     "M002",
     "07/24/2026",
-    address3,
-    centralLibraryAtlanta
+    address3
 );
 
 LibraryMember danStabb = new LibraryMember(
@@ -75,8 +67,7 @@ LibraryMember danStabb = new LibraryMember(
     "001-0002",
     "M003",
     "07/24/2026",
-    address4,
-    centralLibraryAtlanta
+    address4
 );
 
 LibraryMember paulKnight = new LibraryMember(
@@ -86,8 +77,7 @@ LibraryMember paulKnight = new LibraryMember(
     "678-4321",
     "M004",
     "07/24/2026",
-    address5,
-    centralLibraryAtlanta
+    address5
 );
 
 LibraryMember gloriaBell = new LibraryMember(
@@ -97,8 +87,7 @@ LibraryMember gloriaBell = new LibraryMember(
     "912-8630",
     "M005",
     "07/24/2026",
-    address6,
-    centralLibraryAtlanta
+    address6
 );
 
 LibraryMember jessicaYearwood = new LibraryMember(
@@ -108,20 +97,8 @@ LibraryMember jessicaYearwood = new LibraryMember(
     "824-9156",
     "M006",
     "07/24/2026",
-    address7,
-    centralLibraryAtlanta
+    address7
 );
-
-centralLibraryAtlanta.addLibrarian(hypatia);
-centralLibraryAtlanta.addLibrarian(krisYounger);
-centralLibraryAtlanta.addMember(alice);
-centralLibraryAtlanta.addMember(bob);
-centralLibraryAtlanta.addMember(danStabb);
-centralLibraryAtlanta.addMember(paulKnight);
-centralLibraryAtlanta.addMember(gloriaBell);
-centralLibraryAtlanta.addMember(jessicaYearwood);
-// centralLibraryAtlanta.addItem();
-
 //Librian output
 System.out.println("Librarians:");
 
@@ -143,8 +120,5 @@ System.out.println(paulKnight.getName());
 System.out.println(alice.getName());
 
 System.out.println(bob.getName());
-}// ends main
-
-
-
+}
 }

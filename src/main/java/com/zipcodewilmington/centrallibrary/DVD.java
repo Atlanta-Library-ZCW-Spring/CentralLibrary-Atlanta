@@ -1,11 +1,14 @@
 package com.zipcodewilmington.centrallibrary;
 
-public class DVD extends LibraryItem {
+public class DVD extends LibraryItem implements Reservable{
 
     private String director;
     private int duration;
     private String rating;
     private String genre;
+
+    private boolean isReserved;
+    private LibraryMember reservedBy;
 
     public DVD(
             String id,
@@ -59,4 +62,31 @@ public class DVD extends LibraryItem {
     public java.util.List<String> getSearchableFields() {
         return java.util.List.of(getTitle(), director, genre);
     }
+
+    @Override
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    @Override
+    public LibraryMember getReserved() {
+        return reservedBy;
+    }
+
+    @Override
+    public void reserve(LibraryMember member) {
+        if (!isReserved) {
+            isReserved = true;
+            reservedBy = member;
+        } else {
+            System.out.println("This item is already reserved by someone else.");
+        }
+    }
+
+    @Override
+    public void cancelReserve() {
+        isReserved = false;
+        reservedBy = null;
+    }
+
 }

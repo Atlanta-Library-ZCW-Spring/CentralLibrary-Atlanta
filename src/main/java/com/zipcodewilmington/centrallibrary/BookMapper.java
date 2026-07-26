@@ -1,4 +1,4 @@
-package com.zipcodewilmington.POJO;
+package com.zipcodewilmington.centrallibrary;
 
 public class BookMapper {
     
