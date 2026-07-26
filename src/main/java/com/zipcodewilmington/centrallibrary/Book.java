@@ -4,7 +4,8 @@ public class Book extends LibraryItem {
 
     private String author;
     private String isbn;
-    private int pages;
+    // private int pages;
+    private Integer pages; //changed b/c I decided to kee[ numberOfPages nullable since the source data is null in every record and int in java can never be null as it defaults 0 silentrly.]
     private String genre;
 
     public Book(
@@ -13,7 +14,7 @@ public class Book extends LibraryItem {
             String location,
             String author,
             String isbn,
-            int pages,
+            Integer pages,
             String genre) {
 
         super(id, title, location);
@@ -32,7 +33,7 @@ public class Book extends LibraryItem {
         return isbn;
     }
 
-    public int getPages() {
+    public Integer getPages() {
         return pages;
     }
 

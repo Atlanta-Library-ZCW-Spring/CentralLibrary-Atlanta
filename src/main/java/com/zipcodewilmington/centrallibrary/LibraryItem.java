@@ -33,13 +33,24 @@ public abstract class LibraryItem implements Searchable {
     public void checkIn() {
     available = true;
     }
+
+    @Override
+    public void matchesKeyword() {
+        return null;
+    }
+
+    @Override 
+    public void getSearchableFields() {
+
+    }
+
     public abstract double calculateLateFee(int daysLate);
 
     public abstract int getMaxBorrowDays();
 
     public abstract String getItemType();
 
-    public abstract List<String> getSearchableFields();
+    // public abstract List<String> getSearchableFields();
 
 
 }
