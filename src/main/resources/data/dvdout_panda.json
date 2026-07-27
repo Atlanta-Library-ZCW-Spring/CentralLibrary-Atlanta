@@ -1,0 +1,402 @@
+[
+    {
+        "recordID":"862",
+        "title":"Toy Story",
+        "director":"John Lasseter",
+        "duration":81.0,
+        "rating":"G",
+        "genre":"Animation, Comedy, Family"
+    },
+    {
+        "recordID":"8844",
+        "title":"Jumanji",
+        "director":"Joe Johnston",
+        "duration":104.0,
+        "rating":"PG",
+        "genre":"Adventure, Fantasy, Family"
+    },
+    {
+        "recordID":"15602",
+        "title":"Grumpier Old Men",
+        "director":"Howard Deutch",
+        "duration":101.0,
+        "rating":"PG-13",
+        "genre":"Romance, Comedy"
+    },
+    {
+        "recordID":"31357",
+        "title":"Waiting to Exhale",
+        "director":"Forest Whitaker",
+        "duration":127.0,
+        "rating":"R",
+        "genre":"Comedy, Drama, Romance"
+    },
+    {
+        "recordID":"11862",
+        "title":"Father of the Bride Part II",
+        "director":"Charles Shyer",
+        "duration":106.0,
+        "rating":"PG",
+        "genre":"Comedy"
+    },
+    {
+        "recordID":"949",
+        "title":"Heat",
+        "director":"Michael Mann",
+        "duration":170.0,
+        "rating":"R",
+        "genre":"Action, Crime, Drama, Thriller"
+    },
+    {
+        "recordID":"11860",
+        "title":"Sabrina",
+        "director":"Sydney Pollack",
+        "duration":127.0,
+        "rating":"PG",
+        "genre":"Comedy, Romance"
+    },
+    {
+        "recordID":"45325",
+        "title":"Tom and Huck",
+        "director":"Peter Hewitt",
+        "duration":97.0,
+        "rating":"PG",
+        "genre":"Action, Adventure, Drama, Family"
+    },
+    {
+        "recordID":"9091",
+        "title":"Sudden Death",
+        "director":"Peter Hyams",
+        "duration":106.0,
+        "rating":"R",
+        "genre":"Action, Adventure, Thriller"
+    },
+    {
+        "recordID":"710",
+        "title":"GoldenEye",
+        "director":"Martin Campbell",
+        "duration":130.0,
+        "rating":"PG-13",
+        "genre":"Adventure, Action, Thriller"
+    },
+    {
+        "recordID":"9087",
+        "title":"The American President",
+        "director":"Rob Reiner",
+        "duration":106.0,
+        "rating":"PG-13",
+        "genre":"Comedy, Drama, Romance"
+    },
+    {
+        "recordID":"12110",
+        "title":"Dracula: Dead and Loving It",
+        "director":"Mel Brooks",
+        "duration":88.0,
+        "rating":"PG-13",
+        "genre":"Comedy, Horror"
+    },
+    {
+        "recordID":"21032",
+        "title":"Balto",
+        "director":"Simon Wells",
+        "duration":78.0,
+        "rating":"G",
+        "genre":"Family, Animation, Adventure"
+    },
+    {
+        "recordID":"10858",
+        "title":"Nixon",
+        "director":"Oliver Stone",
+        "duration":192.0,
+        "rating":"R",
+        "genre":"History, Drama"
+    },
+    {
+        "recordID":"1408",
+        "title":"Cutthroat Island",
+        "director":"Renny Harlin",
+        "duration":119.0,
+        "rating":"PG-13",
+        "genre":"Action, Adventure"
+    },
+    {
+        "recordID":"524",
+        "title":"Casino",
+        "director":"Martin Scorsese",
+        "duration":178.0,
+        "rating":"R",
+        "genre":"Drama, Crime"
+    },
+    {
+        "recordID":"4584",
+        "title":"Sense and Sensibility",
+        "director":"Ang Lee",
+        "duration":136.0,
+        "rating":"PG",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"5",
+        "title":"Four Rooms",
+        "director":"Allison Anders",
+        "duration":98.0,
+        "rating":"R",
+        "genre":"Crime, Comedy"
+    },
+    {
+        "recordID":"9273",
+        "title":"Ace Ventura: When Nature Calls",
+        "director":"Steve Oedekerk",
+        "duration":90.0,
+        "rating":"PG-13",
+        "genre":"Crime, Comedy, Adventure"
+    },
+    {
+        "recordID":"11517",
+        "title":"Money Train",
+        "director":"Joseph Ruben",
+        "duration":103.0,
+        "rating":"R",
+        "genre":"Action, Comedy, Crime"
+    },
+    {
+        "recordID":"8012",
+        "title":"Get Shorty",
+        "director":"Barry Sonnenfeld",
+        "duration":105.0,
+        "rating":"R",
+        "genre":"Comedy, Thriller, Crime"
+    },
+    {
+        "recordID":"1710",
+        "title":"Copycat",
+        "director":"Jon Amiel",
+        "duration":124.0,
+        "rating":"R",
+        "genre":"Drama, Thriller"
+    },
+    {
+        "recordID":"9691",
+        "title":"Assassins",
+        "director":"Richard Donner",
+        "duration":132.0,
+        "rating":"R",
+        "genre":"Action, Adventure, Crime, Thriller"
+    },
+    {
+        "recordID":"12665",
+        "title":"Powder",
+        "director":"Victor Salva",
+        "duration":111.0,
+        "rating":"PG-13",
+        "genre":"Drama, Fantasy, Science Fiction, Thriller"
+    },
+    {
+        "recordID":"451",
+        "title":"Leaving Las Vegas",
+        "director":"Mike Figgis",
+        "duration":112.0,
+        "rating":"R",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"16420",
+        "title":"Othello",
+        "director":"Oliver Parker",
+        "duration":123.0,
+        "rating":"R",
+        "genre":"Drama"
+    },
+    {
+        "recordID":"9263",
+        "title":"Now and Then",
+        "director":"Lesli Linka Glatter",
+        "duration":100.0,
+        "rating":"PG-13",
+        "genre":"Comedy, Drama, Family"
+    },
+    {
+        "recordID":"17015",
+        "title":"Persuasion",
+        "director":"Roger Michell",
+        "duration":104.0,
+        "rating":"PG",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"902",
+        "title":"The City of Lost Children",
+        "director":"Jean-Pierre Jeunet",
+        "duration":108.0,
+        "rating":"R",
+        "genre":"Fantasy, Science Fiction, Adventure"
+    },
+    {
+        "recordID":"37557",
+        "title":"Shanghai Triad",
+        "director":"Zhang Yimou",
+        "duration":108.0,
+        "rating":"R",
+        "genre":"Drama, Crime"
+    },
+    {
+        "recordID":"9909",
+        "title":"Dangerous Minds",
+        "director":"John N. Smith",
+        "duration":99.0,
+        "rating":"R",
+        "genre":"Drama, Crime"
+    },
+    {
+        "recordID":"63",
+        "title":"Twelve Monkeys",
+        "director":"Terry Gilliam",
+        "duration":129.0,
+        "rating":"R",
+        "genre":"Science Fiction, Thriller, Mystery"
+    },
+    {
+        "recordID":"78802",
+        "title":"Wings of Courage",
+        "director":"Jean-Jacques Annaud",
+        "duration":50.0,
+        "rating":"G",
+        "genre":"Romance, Adventure"
+    },
+    {
+        "recordID":"9598",
+        "title":"Babe",
+        "director":"Chris Noonan",
+        "duration":89.0,
+        "rating":"G",
+        "genre":"Fantasy, Drama, Comedy, Family"
+    },
+    {
+        "recordID":"47018",
+        "title":"Carrington",
+        "director":"Christopher Hampton",
+        "duration":121.0,
+        "rating":"R",
+        "genre":"History, Drama, Romance"
+    },
+    {
+        "recordID":"687",
+        "title":"Dead Man Walking",
+        "director":"Tim Robbins",
+        "duration":122.0,
+        "rating":"R",
+        "genre":"Drama"
+    },
+    {
+        "recordID":"139405",
+        "title":"Across the Sea of Time",
+        "director":"Stephen Low",
+        "duration":51.0,
+        "rating":"G",
+        "genre":"Adventure, History, Drama, Family"
+    },
+    {
+        "recordID":"33689",
+        "title":"It Takes Two",
+        "director":"Andy Tennant",
+        "duration":101.0,
+        "rating":"PG",
+        "genre":"Comedy, Family, Romance"
+    },
+    {
+        "recordID":"9603",
+        "title":"Clueless",
+        "director":"Amy Heckerling",
+        "duration":97.0,
+        "rating":"PG-13",
+        "genre":"Comedy, Drama, Romance"
+    },
+    {
+        "recordID":"34615",
+        "title":"Cry, the Beloved Country",
+        "director":"Darrell James Roodt",
+        "duration":106.0,
+        "rating":"PG-13",
+        "genre":"Drama"
+    },
+    {
+        "recordID":"31174",
+        "title":"Richard III",
+        "director":"Richard Loncraine",
+        "duration":104.0,
+        "rating":"R",
+        "genre":"Drama, War"
+    },
+    {
+        "recordID":"11443",
+        "title":"Dead Presidents",
+        "director":"Albert Hughes",
+        "duration":119.0,
+        "rating":"R",
+        "genre":"Action, Crime, Drama, History"
+    },
+    {
+        "recordID":"35196",
+        "title":"Restoration",
+        "director":"Michael Hoffman",
+        "duration":117.0,
+        "rating":"R",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"9312",
+        "title":"Mortal Kombat",
+        "director":"Paul W.S. Anderson",
+        "duration":101.0,
+        "rating":"PG-13",
+        "genre":"Action, Fantasy"
+    },
+    {
+        "recordID":"577",
+        "title":"To Die For",
+        "director":"Gus Van Sant",
+        "duration":106.0,
+        "rating":"R",
+        "genre":"Fantasy, Drama, Comedy, Thriller"
+    },
+    {
+        "recordID":"11861",
+        "title":"How To Make An American Quilt",
+        "director":"Jocelyn Moorhouse",
+        "duration":116.0,
+        "rating":"PG-13",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"807",
+        "title":"Se7en",
+        "director":"David Fincher",
+        "duration":127.0,
+        "rating":"R",
+        "genre":"Crime, Mystery, Thriller"
+    },
+    {
+        "recordID":"10530",
+        "title":"Pocahontas",
+        "director":"Mike Gabriel",
+        "duration":81.0,
+        "rating":"G",
+        "genre":"Adventure, Animation, Drama, Family"
+    },
+    {
+        "recordID":"8391",
+        "title":"When Night Is Falling",
+        "director":"Patricia Rozema",
+        "duration":96.0,
+        "rating":"Unrated",
+        "genre":"Drama, Romance"
+    },
+    {
+        "recordID":"629",
+        "title":"The Usual Suspects",
+        "director":"Bryan Singer",
+        "duration":106.0,
+        "rating":"R",
+        "genre":"Drama, Crime, Thriller"
+    }
+]

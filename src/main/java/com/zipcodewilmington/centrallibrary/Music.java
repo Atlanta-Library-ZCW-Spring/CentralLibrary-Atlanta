@@ -59,7 +59,8 @@ public class Music extends LibraryItem implements Reservable {
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), artist, track, genre);
+        // return java.util.List.of(getTitle(), artist, track, genre);
+        return java.util.Arrays.asList(getTitle(), artist, track, genre); //tolerates nulls
     }
 
     @Override

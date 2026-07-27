@@ -61,7 +61,8 @@ public class Book extends LibraryItem implements Reservable {
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), author, isbn, genre);
+        // return java.util.List.of(getTitle(), author, isbn, genre);
+        return java.util.Arrays.asList(getTitle(), author, isbn, genre); //tolerates nulls
     }
 
 

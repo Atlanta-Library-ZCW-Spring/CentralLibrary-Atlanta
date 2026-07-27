@@ -64,7 +64,8 @@ public class Periodical extends LibraryItem {
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), publisher, issn);
+        // return java.util.List.of(getTitle(), publisher, issn);
+        return java.util.Arrays.asList(getTitle(), publisher, issn); //tolereates nulls
     }
 }
 
