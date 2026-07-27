@@ -1,11 +1,15 @@
 package com.zipcodewilmington.centrallibrary;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements Reservable {
 
     private String author;
     private String isbn;
-    private int pages;
+    // private int pages;
+    private Integer pages; //changed b/c I decided to kee[ numberOfPages nullable since the source data is null in every record and int in java can never be null as it defaults 0 silentrly.]
     private String genre;
+
+    private boolean isReserved;
+    private LibraryMember reservedBy;
 
     public Book(
             String id,
@@ -13,7 +17,7 @@ public class Book extends LibraryItem {
             String location,
             String author,
             String isbn,
-            int pages,
+            Integer pages,
             String genre) {
 
         super(id, title, location);
@@ -32,7 +36,7 @@ public class Book extends LibraryItem {
         return isbn;
     }
 
-    public int getPages() {
+    public Integer getPages() {
         return pages;
     }
 
@@ -59,4 +63,32 @@ public class Book extends LibraryItem {
     public java.util.List<String> getSearchableFields() {
         return java.util.List.of(getTitle(), author, isbn, genre);
     }
+
+
+    @Override
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    @Override
+    public LibraryMember getReserved() {
+        return reservedBy;
+    }
+
+    @Override
+    public void reserve(LibraryMember member) {
+        if (!isReserved) {
+            isReserved = true;
+            reservedBy = member;
+        } else {
+            System.out.println("This item is already reserved by someone else.");
+        }
+    }
+
+    @Override
+    public void cancelReserve() {
+        isReserved = false;
+        reservedBy = null;
+    }
+
 }

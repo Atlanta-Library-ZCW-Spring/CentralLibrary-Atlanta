@@ -1,4 +1,4 @@
-package com.zipcodewilmington.centralibrary;
+package com.zipcodewilmington.centrallibrary;
 
 // extends means the librarian has everything from "person" file
 
@@ -6,18 +6,22 @@ package com.zipcodewilmington.centralibrary;
     private String employeeId;
     private String department;
     private double salary;
+    private Library library; // choosing to making Library object a private field because it models the reality we
+    //re working with, a librarian who only works at one library. I know it means chaning every place we already construct
+    //a librarian like MainApplicationTest, but I think it's best practice. - J-note :)
     
   // Super is calling what we did in "person" file
 // super(name,age,email,phoneNumber)
 
 // constructor
   public Librarian(String name, int age, String email, String phoneNumber,
-                 String employeeId, String department, double salary) {
+                 String employeeId, String department, double salary, Library library) {
       super (name, age, email, phoneNumber);              
                 
        this.employeeId = employeeId;
        this.department = department;
-       this.salary = salary;        
+       this.salary = salary;   
+       this.library = library;     
                 
     } 
     
@@ -54,12 +58,14 @@ public void setSalary(double salary) {
 
 //Methods
 
-public void addItemToLibrary (){
+public void addItemToLibrary (LibraryItem item){
     // TODO: implement when library class is complete
+    library.addItem(item);
 }
 
-public void removeItemFromLibrary () {
+public void removeItemFromLibrary (LibraryItem item) {
     // TODO: implement when library class is complete
+    library.removeItem(item);
 }
 
     }

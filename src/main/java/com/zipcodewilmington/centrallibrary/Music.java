@@ -1,12 +1,14 @@
 package com.zipcodewilmington.centrallibrary;
 
-public class Music extends LibraryItem {
+public class Music extends LibraryItem implements Reservable {
 
     private String artist;
     private String track;
     private String genre;
     private int duration;
 
+    private boolean isReserved;
+    private LibraryMember reservedBy;
     public Music(
             String id,
             String title,
@@ -59,4 +61,31 @@ public class Music extends LibraryItem {
     public java.util.List<String> getSearchableFields() {
         return java.util.List.of(getTitle(), artist, track, genre);
     }
+
+    @Override
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    @Override
+    public LibraryMember getReserved() {
+        return reservedBy;
+    }
+
+    @Override
+    public void reserve(LibraryMember member) {
+        if (!isReserved) {
+            isReserved = true;
+            reservedBy = member;
+        } else {
+            System.out.println("This item is already reserved by someone else.");
+        }
+    }
+
+    @Override
+    public void cancelReserve() {
+        isReserved = false;
+        reservedBy = null;
+    }
+
 }
