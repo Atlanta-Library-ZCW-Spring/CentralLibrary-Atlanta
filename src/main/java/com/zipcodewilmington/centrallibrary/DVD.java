@@ -60,7 +60,8 @@ public class DVD extends LibraryItem implements Reservable{
 
     @Override
     public java.util.List<String> getSearchableFields() {
-        return java.util.List.of(getTitle(), director, genre);
+        // return java.util.List.of(getTitle(), director, genre);
+        return java.util.Arrays.asList(getTitle(), director, genre); //tolerates nulls
     }
 
     @Override

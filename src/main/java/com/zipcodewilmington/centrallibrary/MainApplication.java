@@ -170,7 +170,185 @@ MusicMapper musicMapper = new MusicMapper();
     centralLibraryAtlanta.addItem(music);
 }
 
-System.out.println("Total items loaded: " + centralLibraryAtlanta.getItems().size());
+///END OF LOADERS
+
+
+
+
+///////////////////////////////COMMAND lINE INTERFACE//////////////////////
+
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("=== CENTRAL LIBRARY ATLANTA ===");
+System.out.println("Are you a (1) Librarian or (2) Member?");
+String roleChoice = scanner.nextLine().trim();
+
+Librarian loggedInLibrarian = null;
+LibraryMember loggedInMember = null;
+
+if (roleChoice.equals("1")) {
+    System.out.print("Enter your employee ID: ");
+    String employeeId = scanner.nextLine().trim();
+    for (Librarian librarian : centralLibraryAtlanta.getLibrarians()) {
+        if (librarian.getEmployeeId().equals(employeeId)) {
+            loggedInLibrarian = librarian;
+            break;
+        }
+    }
+    if (loggedInLibrarian == null) {
+        System.out.println("No librarian found with that ID. Exiting.");
+        return;
+    }
+    System.out.println("Welcome, " + loggedInLibrarian.getName() + ".");
+
+} else if (roleChoice.equals("2")) {
+    System.out.print("Enter your member ID: ");
+    String memberId = scanner.nextLine().trim();
+    for (LibraryMember member : centralLibraryAtlanta.getMembers()) {
+        if (member.getMemberId().equals(memberId)) {
+            loggedInMember = member;
+            break;
+        }
+    }
+    if (loggedInMember == null) {
+        System.out.println("No member found with that ID. Exiting.");
+        return;
+    }
+    System.out.println("Welcome, " + loggedInMember.getName() + ".");
+
+} else {
+    System.out.println("Invalid choice. Exiting.");
+    return;
+}
+
+boolean running = true;
+
+while (running) {
+
+    if (loggedInLibrarian != null) {
+        // ===== LIBRARIAN MENU =====
+        System.out.println("\n--- Librarian Menu (" + loggedInLibrarian.getName() + ") ---");
+        System.out.println("1. Search catalog");
+        System.out.println("2. Add item to library");
+        System.out.println("3. Remove item from library");
+        System.out.println("4. View late fee report");
+        System.out.println("0. Quit");
+        System.out.print("Choose an option: ");
+        String choice = scanner.nextLine().trim();
+
+        if (choice.equals("1")) {
+            System.out.print("Search keyword: ");
+            String keyword = scanner.nextLine();
+            List<LibraryItem> results = centralLibraryAtlanta.search(keyword);
+            System.out.println("Found " + results.size() + " results:");
+            for (LibraryItem item : results) {
+                System.out.println("- " + item.getItemType() + ": " + item.getTitle());
+            }
+
+        } else if (choice.equals("2")) {
+            System.out.print("New book title: ");
+            String title = scanner.nextLine();
+            Book newBook = new Book("B-NEW1", title, "Unknown", "Unknown Author", "N/A", 0, "Unknown");
+            loggedInLibrarian.addItemToLibrary(newBook);
+            System.out.println("Added: " + title);
+
+        } else if (choice.equals("3")) {
+            System.out.print("Exact title to remove: ");
+            String title = scanner.nextLine();
+            LibraryItem toRemove = null;
+            for (LibraryItem item : centralLibraryAtlanta.getItems()) {
+                if (item.getTitle().equalsIgnoreCase(title)) {
+                    toRemove = item;
+                    break;
+                }
+            }
+            if (toRemove != null) {
+                loggedInLibrarian.removeItemFromLibrary(toRemove);
+                System.out.println("Removed: " + title);
+            } else {
+                System.out.println("No item found with that title.");
+            }
+
+        } else if (choice.equals("4")) {
+            centralLibraryAtlanta.generateLateFeeReport();
+
+        } else if (choice.equals("0")) {
+            running = false;
+            System.out.println("Goodbye, " + loggedInLibrarian.getName() + ".");
+
+        } else {
+            System.out.println("Invalid option.");
+        }
+
+    } else {
+        // ===== MEMBER MENU =====
+        System.out.println("\n--- Member Menu (" + loggedInMember.getName() + ") ---");
+        System.out.println("1. Search catalog");
+        System.out.println("2. Reserve an item");
+        System.out.println("3. Borrow an item");
+        System.out.println("4. Return an item");
+        System.out.println("0. Quit");
+        System.out.print("Choose an option: ");
+        String choice = scanner.nextLine().trim();
+
+        if (choice.equals("1")) {
+            System.out.print("Search keyword: ");
+            String keyword = scanner.nextLine();
+            List<LibraryItem> results = centralLibraryAtlanta.search(keyword);
+            System.out.println("Found " + results.size() + " results:");
+            for (LibraryItem item : results) {
+                System.out.println("- " + item.getItemType() + ": " + item.getTitle());
+            }
+
+        } else if (choice.equals("2")) {
+            System.out.print("Item title to reserve: ");
+            String title = scanner.nextLine();
+            for (LibraryItem item : centralLibraryAtlanta.getItems()) {
+                if (item.getTitle().equalsIgnoreCase(title) && item instanceof Reservable) {
+                    ((Reservable) item).reserve(loggedInMember);
+                    System.out.println("Reserved: " + item.getTitle());
+                    break;
+                }
+            }
+
+        } else if (choice.equals("3")) {
+            System.out.print("Item title to borrow: ");
+            String title = scanner.nextLine();
+            for (LibraryItem item : centralLibraryAtlanta.getItems()) {
+                if (item.getTitle().equalsIgnoreCase(title)) {
+                    loggedInMember.borrowItem(item);
+                    break;
+                }
+            }
+
+        } else if (choice.equals("4")) {
+            System.out.print("Item title to return: ");
+            String title = scanner.nextLine();
+            System.out.print("Days late: ");
+            int daysLate = Integer.parseInt(scanner.nextLine());
+            for (LibraryItem item : loggedInMember.getBorrowedItems()) {
+                if (item.getTitle().equalsIgnoreCase(title)) {
+                    loggedInMember.returnItem(item, daysLate);
+                    break;
+                }
+            }
+
+        } else if (choice.equals("0")) {
+            running = false;
+            System.out.println("Goodbye, " + loggedInMember.getName() + ".");
+
+        } else {
+            System.out.println("Invalid option.");
+        }
+    }
+}
+scanner.close();
+
+///////////////////////////////COMMAND lINE INTERFACE//////////////////////
+
+
+
+/*
 
 
 //Librian output
@@ -194,6 +372,13 @@ System.out.println(paulKnight.getName());
 System.out.println(alice.getName());
 
 System.out.println(bob.getName());
+
+
+
+*/
+
+
+
 }// ends main
 
 
