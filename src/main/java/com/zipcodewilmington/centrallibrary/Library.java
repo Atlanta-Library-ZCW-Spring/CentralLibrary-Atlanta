@@ -9,9 +9,11 @@ public class Library {
     private String name;
     private Address address;
 
+
     private List<LibraryItem> items;
     private List<LibraryMember> members;
     private List<Librarian> librarians;
+    private List<LibraryItem> items = new ArrayList <>();
     // Scanner scanner = new Scanner(System.in); 
 
     // Constructor
@@ -94,6 +96,15 @@ public class Library {
             System.out.println(checkedkMember.getName() + " has $" + checkedkMember.getOutstandingFees() + " in late fees.");
         }
     }
+        public int countItemsByType(Class<?> type) {
+            int count = 0;
 
+            for (LibraryItem item : items) {
+                if (type.isInstance(item)) {
+                    count++;
+                }
+            }
+            return count;
+        }
     
 }

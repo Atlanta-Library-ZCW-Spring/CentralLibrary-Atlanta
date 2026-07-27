@@ -373,6 +373,11 @@ System.out.println(alice.getName());
 
 System.out.println(bob.getName());
 
+System.out.println("Total Books:" = centralLibraryAtlanta.countItemsByType(Book.class));
+System.out.println("Total DVDs:" + centralLibraryAtlanta.countItemsByItemsyTyper(DVD.class));
+System.out.println("Total Music:" + centralLibraryAtlanta.countItemsByType(Music.class));
+System.out.println("Total Periodicals:" + cantralLibraryAtlanta.countItemsByTyper(Periodical.class));
+
 
 
 */
