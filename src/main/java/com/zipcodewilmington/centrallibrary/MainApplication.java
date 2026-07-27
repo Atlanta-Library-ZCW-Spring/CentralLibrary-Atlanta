@@ -1,10 +1,14 @@
 package com.zipcodewilmington.centrallibrary;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import java.io.*;
+import java.util.*;
 
 /**
  * Created by n3pjk on 6/9/2025.
  */
 public class MainApplication {
-    public static void main(String [] args){
+    public static void main(String [] args) throws Exception {
 
 //Addresses
 
@@ -122,6 +126,53 @@ centralLibraryAtlanta.addMember(gloriaBell);
 centralLibraryAtlanta.addMember(jessicaYearwood);
 // centralLibraryAtlanta.addItem();
 
+//LOADERS
+ObjectMapper mapper = new ObjectMapper();
+BookMapper bookMapper = new BookMapper();
+PeriodicalMapper periodicalMapper = new PeriodicalMapper();
+DVDMapper dvdMapper = new DVDMapper();
+MusicMapper musicMapper = new MusicMapper();
+
+///BookLoader
+    File bookFile = new File("src/main/resources/data/booksout.json");
+    List<RawBookRecord> rawBooks = mapper.readValue(bookFile, new TypeReference<List<RawBookRecord>>() {});
+
+    for (RawBookRecord raw : rawBooks) {
+    Book book = bookMapper.mapToBook(raw);
+    centralLibraryAtlanta.addItem(book);
+}
+
+///PERIODOCALS LOADER
+    File periodicalFile = new File("src/main/resources/data/clean_periodicals.json");
+    List<RawPeriodicalRecord> rawPeriodicals = mapper.readValue(periodicalFile, new TypeReference<List<RawPeriodicalRecord>>() {});
+
+    for (RawPeriodicalRecord raw : rawPeriodicals) {
+    Periodical periodical = periodicalMapper.mapToPeriodical(raw);
+    centralLibraryAtlanta.addItem(periodical);
+}
+
+/// DVD LOADER
+    File dvdFile = new File("src/main/resources/data/dvdout_panda.json");
+    List<RawDVDRecord> rawDVDs = mapper.readValue(dvdFile, new TypeReference<List<RawDVDRecord>>() {});
+
+    for (RawDVDRecord raw : rawDVDs) {
+    DVD dvd = dvdMapper.mapToDVD(raw);
+    centralLibraryAtlanta.addItem(dvd);
+}
+
+
+/// MUSIC LOADER
+    File musicFile = new File("src/main/resources/data/music_data.json");
+    List<RawMusicRecord> rawMusic = mapper.readValue(musicFile, new TypeReference<List<RawMusicRecord>>() {});
+
+    for (RawMusicRecord raw : rawMusic) {
+    Music music = musicMapper.mapToMusic(raw);
+    centralLibraryAtlanta.addItem(music);
+}
+
+System.out.println("Total items loaded: " + centralLibraryAtlanta.getItems().size());
+
+
 //Librian output
 System.out.println("Librarians:");
 
@@ -144,6 +195,9 @@ System.out.println(alice.getName());
 
 System.out.println(bob.getName());
 }// ends main
+
+
+
 
 
 
